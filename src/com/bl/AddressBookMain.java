@@ -8,6 +8,8 @@ public class AddressBookMain {
     static final int DISPLAY_DETAILS = 2;
     static final int EDIT_CONTACT = 3;
     static final int DISPLAY_EDIT_CONTACT = 4;
+    static final int DELETE_CONTACT = 5;
+
 
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program!!");
@@ -35,11 +37,13 @@ public class AddressBookMain {
                 case DISPLAY_EDIT_CONTACT:
                     addressBook.showDetails();
                     break;
+                case DELETE_CONTACT:
+                    addressBook.deleteContact();
                 default:
                     System.out.println("Enter a valid option");
                     break;
             }
         }
-        while (option != 5);
+        while (option != 6);
     }
 }

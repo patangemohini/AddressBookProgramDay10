@@ -63,5 +63,18 @@ public class AddressBook {
             System.out.println("Contact not found ");
         }
     }
+
+    public void deleteContact() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter first name to delete : ");
+        String firstName = sc.next();
+        int index = findContact(firstName);
+        if (index == 0) {
+            personDetails.remove(index);
+            System.out.println("contact deleted");
+        } else {
+            System.out.println("no such contact to delete!!");
+        }
+    }
 }
 
