@@ -3,9 +3,9 @@ package com.bl;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddMultipleContactsToAddressBook {
 
-    ArrayList<PersonDetails> personDetails = new ArrayList<>();
+    ArrayList<AddMultiplePersonDetails> personDetailsArrayList = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
 
     public void addContact() {
@@ -17,9 +17,9 @@ public class AddressBook {
         }
     }
 
-    public PersonDetails personInputDetails() {
+    public AddMultiplePersonDetails personInputDetails() {
 
-        PersonDetails details = new PersonDetails();
+        AddMultiplePersonDetails details = new AddMultiplePersonDetails();
         System.out.println("Enter First Name : ");
         details.firstName = sc.next();
         System.out.println("Enter Last Name : ");
@@ -36,12 +36,12 @@ public class AddressBook {
         details.zip = sc.nextInt();
         System.out.println("Enter PhoneNumber : ");
         details.phoneNumber = sc.nextLong();
-        this.personDetails.add(details);
+        this.personDetailsArrayList.add(details);
         return details;
     }
 
     public void showDetails() {
-        for (PersonDetails aBook: personDetails) {
+        for (AddMultiplePersonDetails aBook: personDetailsArrayList) {
             System.out.println("First name : " + aBook.firstName);
             System.out.println("last name : " + aBook.lastName);
             System.out.println("Address : " + aBook.address);
@@ -55,9 +55,9 @@ public class AddressBook {
     }
 
     public int findContact(String firstName) {
-        for (PersonDetails cont : personDetails) {
+        for (AddMultiplePersonDetails cont : personDetailsArrayList) {
             if (firstName.compareToIgnoreCase(cont.getFirstName()) == 0) {
-                return personDetails.indexOf(cont);
+                return personDetailsArrayList.indexOf(cont);
             }
         }
         return -1;
@@ -69,7 +69,7 @@ public class AddressBook {
         String firstName = scan.next();
         int index = findContact(firstName);
         if (index == 0) {
-            personDetails.set(index, personInputDetails());
+            personDetailsArrayList.set(index, personInputDetails());
         } else {
             System.out.println("Contact not found ");
         }
@@ -81,7 +81,7 @@ public class AddressBook {
         String firstName = sc.next();
         int index = findContact(firstName);
         if (index == 0) {
-            personDetails.remove(index);
+            personDetailsArrayList.remove(index);
             System.out.println("contact deleted");
         } else {
             System.out.println("no such contact to delete!!");

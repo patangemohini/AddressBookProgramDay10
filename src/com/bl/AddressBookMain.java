@@ -13,7 +13,7 @@ public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program!!");
         Scanner sc = new Scanner(System.in);
-        AddressBook addressBook = new AddressBook();
+        AddMultipleContactsToAddressBook addressBook = new AddMultipleContactsToAddressBook();
         int option;
         do {
             System.out.println("-------------------------------------------------");
