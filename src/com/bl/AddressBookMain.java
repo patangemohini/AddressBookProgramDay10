@@ -5,10 +5,9 @@ import java.util.Scanner;
 public class AddressBookMain {
 
     static final int ADD_CONTACT = 1;
-    static final int DISPLAY_DETAILS = 2;
-    static final int EDIT_CONTACT = 3;
-    static final int DISPLAY_EDIT_CONTACT = 4;
-    static final int DELETE_CONTACT = 5;
+    static final int EDIT_CONTACT = 2;
+    static final int DELETE_CONTACT = 3;
+    static final int DISPLAY_DETAILS = 4  ;
 
 
     public static void main(String[] args) {
@@ -18,27 +17,25 @@ public class AddressBookMain {
         int option;
         do {
             System.out.println("-------------------------------------------------");
-            System.out.println(" 1.Add a new contact.");
-            System.out.println(" 2.display contact.");
-            System.out.println(" 3.edit contact.");
-            System.out.println(" 4.display edit contact.");
+            System.out.println(" 1.Add contact.");
+            System.out.println(" 2.edit contact");
+            System.out.println(" 3.delete contact.");
+            System.out.println(" 4.display contact.");
             option = sc.nextInt();
 
             switch (option) {
                 case ADD_CONTACT:
-                    addressBook.personInputDetails();
-                    break;
-                case DISPLAY_DETAILS:
-                    addressBook.showDetails();
+                    addressBook.addContact();
                     break;
                 case EDIT_CONTACT:
                     addressBook.editContact();
                     break;
-                case DISPLAY_EDIT_CONTACT:
-                    addressBook.showDetails();
-                    break;
                 case DELETE_CONTACT:
                     addressBook.deleteContact();
+                    break;
+                case DISPLAY_DETAILS:
+                    addressBook.showDetails();
+                    break;
                 default:
                     System.out.println("Enter a valid option");
                     break;

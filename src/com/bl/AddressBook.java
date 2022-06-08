@@ -6,22 +6,32 @@ import java.util.Scanner;
 public class AddressBook {
 
     ArrayList<PersonDetails> personDetails = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
+
+    public void addContact() {
+        System.out.println("Enter Number of contacts to be added");
+        int n = sc.nextInt();
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter contact details of person");
+            personInputDetails();
+        }
+    }
 
     public PersonDetails personInputDetails() {
-        Scanner sc = new Scanner(System.in);
+
         PersonDetails details = new PersonDetails();
         System.out.println("Enter First Name : ");
-        details.firstName = sc.nextLine();
+        details.firstName = sc.next();
         System.out.println("Enter Last Name : ");
-        details.lastName = sc.nextLine();
+        details.lastName = sc.next();
         System.out.println("Enter Address : ");
-        details.address = sc.nextLine();
+        details.address = sc.next();
         System.out.println("Enter City : ");
-        details.city = sc.nextLine();
+        details.city = sc.next();
         System.out.println("Enter State : ");
-        details.state = sc.nextLine();
+        details.state = sc.next();
         System.out.println("Enter Email : ");
-        details.email = sc.nextLine();
+        details.email = sc.next();
         System.out.println("Enter zip : ");
         details.zip = sc.nextInt();
         System.out.println("Enter PhoneNumber : ");
@@ -43,6 +53,7 @@ public class AddressBook {
 
         }
     }
+
     public int findContact(String firstName) {
         for (PersonDetails cont : personDetails) {
             if (firstName.compareToIgnoreCase(cont.getFirstName()) == 0) {
