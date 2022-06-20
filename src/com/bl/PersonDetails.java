@@ -1,6 +1,6 @@
 package com.bl;
 
-public class AddMultiplePersonDetails {
+public class PersonDetails {
     String firstName;
     String lastName;
     String address;

@@ -13,7 +13,7 @@ public class AddressBookMain {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book Program!!");
         Scanner sc = new Scanner(System.in);
-        AddMultipleContactsToAddressBook addressBook = new AddMultipleContactsToAddressBook();
+        AddressBook addressBook = new AddressBook();
         int option;
         do {
             System.out.println("-------------------------------------------------");
@@ -21,6 +21,7 @@ public class AddressBookMain {
             System.out.println(" 2.edit contact");
             System.out.println(" 3.delete contact.");
             System.out.println(" 4.display contact.");
+            System.out.println("-------------------------------------------------");
             option = sc.nextInt();
 
             switch (option) {
